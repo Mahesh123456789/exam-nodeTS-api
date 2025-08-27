@@ -3,8 +3,8 @@ import { Router } from "express";
 import * as ctrl from "../controllers/school.controller";
 
 const router = Router();
-router.get("/", ctrl.list);
-router.post("/", ctrl.create);
+router.get("/list", ctrl.list);
+router.post("/create", ctrl.create);
 router.put("/:id", ctrl.update);
 router.delete("/:id", ctrl.remove);
 

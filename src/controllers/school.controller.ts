@@ -5,7 +5,7 @@ import School from "../models/School.model";
 export const create = async (req: Request, res: Response) => {
   try {
     const s = await School.create(req.body);
-    res.status(201).json(s);
+    res.status(201).json({data: s, message: "School added successfully", status: "success"});
   } catch (err: any) {
     res.status(400).json({ message: err.message });
   }

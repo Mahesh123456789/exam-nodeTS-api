@@ -13,6 +13,7 @@ const UserSchema: Schema = new Schema({
   firstName: { type: String, default: "",required: true, },
   lastName: { type: String, default: "",required: true, },
   role: { type: String, enum: ["admin", "teacher", "student"], default: "teacher",required: true },
+  school: { type: Schema.Types.ObjectId, ref: "School" },
   profilePicture: { type: String, default: "" },
   email: { type: String, default: "",required: true },
   phone: { type: String, default: "",required: true },

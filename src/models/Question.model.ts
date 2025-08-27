@@ -8,6 +8,7 @@ export interface IQuestion extends Document {
   choices?: string[];
   answer?: string;
   marks?: number;
+  isGlobal?: Boolean;
   school?: mongoose.Types.ObjectId;
   subject?: mongoose.Types.ObjectId;
   classRef?: mongoose.Types.ObjectId;
@@ -23,6 +24,7 @@ const QuestionSchema = new Schema<IQuestion>({
   marks: { type: Number, default: 1 },
   school: { type: Schema.Types.ObjectId, ref: "School" },
   subject: { type: Schema.Types.ObjectId, ref: "Subject" },
+  isGlobal: Boolean,
   classRef: { type: Schema.Types.ObjectId, ref: "Class" },
   createdBy: { type: Schema.Types.ObjectId, ref: "User" }
 }, { timestamps: true });

@@ -14,7 +14,7 @@ export const addStandard = async (req: Request, res: Response) => {
 
 export const standardList = async (_: Request, res: Response) => {
   const items = await ClassModel.find().sort({ createdAt: -1 });
-  res.json(items);
+  res.json({data:items, status: 'success', message: 'Standard list fetched successfully'});
 };
 
 export const update = async (req: Request, res: Response) => {
