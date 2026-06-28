@@ -12,8 +12,13 @@ export const create = async (req: Request, res: Response) => {
 };
 
 export const list = async (_: Request, res: Response) => {
-  const items = await Subject.find().sort({ createdAt: -1 });
+  try{
+    const items = await Subject.find().sort({ createdAt: -1 });
   res.json({'data': items, 'status': 'success', 'message': 'Subject list fetched successfully'});
+} catch (err: any) {
+   res.status(400).json({ message: err.message });
+}
+  
 };
 
 export const update = async (req: Request, res: Response) => {

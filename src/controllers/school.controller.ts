@@ -11,7 +11,8 @@ export const create = async (req: Request, res: Response) => {
   }
 };
 
-export const list = async (_: Request, res: Response) => {
+export const list = async (req: Request, res: Response) => {
+  console.log(req);
   const items = await School.find().sort({ createdAt: -1 });
   res.json(items);
 };

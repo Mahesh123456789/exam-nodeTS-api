@@ -13,6 +13,7 @@ export const addStandard = async (req: Request, res: Response) => {
 };
 
 export const standardList = async (_: Request, res: Response) => {
+  console.log("standards");
   const items = await ClassModel.find().sort({ createdAt: -1 });
   res.json({data:items, status: 'success', message: 'Standard list fetched successfully'});
 };
